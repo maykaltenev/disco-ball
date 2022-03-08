@@ -1,0 +1,19 @@
+//normalize you should have it 😉
+@import "./var";
+@import "./mixins";
+@import "./loops";
+@import "./animations";
+body {
+  background-image: url(../img/disco-ball.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.main-box {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 50vh;
+  perspective: 50rem;
+}

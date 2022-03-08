@@ -1,0 +1,29 @@
+@for $i from 1 through $item-count {
+  .ball:nth-child(#{$i}) {
+    // background-color: $pink;
+    background-image: url(../img/disco-skin.jpeg);
+    transform-style: preserve-3d;
+    perspective: 50rem;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 100%;
+    @include middle;
+    @if ($i % 2 == 0) {
+      background-color: lighten($blue, random(50));
+      @include move-animation-setup(rotate, random($i) + s);
+    } @else {
+      background-color: lighten($purple, random(50));
+      @include move-animation-setup(rotate-right, random($i) + s);
+    }
+  }
+  .ball:nth-child(#{$i}):hover {
+    box-shadow: 0 0 4rem 55vh lighten($purple, 5);
+    border: 5rem lighten($pink, 4) solid;
+    perspective: 1rem;
+    @if ($i % 2 == 0) {
+      background-color: lighten($purple, random(50));
+    } @else {
+      background-color: lighten($blue, random(50));
+    }
+  }
+}
